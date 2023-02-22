@@ -1,0 +1,36 @@
+﻿<Window x:Class="ElevatorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Лифт" Height="400" Width="500" Loaded="Window_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Name="floors_stackPanel" Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Этаж: " />
+                    <Label Name="current_label" Content="1" />
+                </StackPanel>
+
+                <StackPanel Name="pick_stackPanel" Visibility="Hidden" Orientation="Horizontal" Margin="0 0 0 10">
+                    <Label Content="Параллельный вызов: " Foreground="Red" />
+                    <Label Name="pick_label" Foreground="Red" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Name="open_button" Click="open_button_Click" Content="Открыть" Margin="0 0 10 0" />
+                    <Button Name="close_button" Click="close_button_Click" Content="Закрыть" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Image Grid.Column="1" Name="doors_image" Stretch="Fill" Source="images/open.jpg" />
+    </Grid>
+</Window>
